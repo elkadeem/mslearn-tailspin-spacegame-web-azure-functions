@@ -140,8 +140,8 @@ stages:
           - task: AzureAppServiceSettings@1
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppName)'
-              resourceGroupName: '$(ResourceGroupName)'
+              appName: 'welkadimAzueDevOps'
+              resourceGroupName: 'AzureDevOpsDemo'
               appSettings: |
                 [
                   {
@@ -150,4 +150,3 @@ stages:
                     "slotSetting": false
                   }
                 ]
-              

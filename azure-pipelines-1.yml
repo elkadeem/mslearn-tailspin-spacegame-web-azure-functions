@@ -13,5 +13,16 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: AzureAppServiceSettings@1
+  inputs:
+    azureSubscription: 'Resource Manager - Tailspin - Space Game'
+    appName: 'welkadimAzueDevOps'
+    resourceGroupName: 'AzureDevOpsDemo'
+    appSettings: |
+      [
+         {
+          "name": "LeaderboardFunctionUrl",
+          "value": "https://welkadimdevopsfun.azurewebsites.net/",
+          "slotSetting": false
+         }
+      ]
